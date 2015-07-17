@@ -50,7 +50,7 @@ unsigned int main_cpufreq_control[10];
 unsigned int vfreq_lock = 0;
 static bool vfreq_lock_tempOFF = false;
 unsigned int isBooted = 0;
-unsigned int isenable_oc = 0;
+unsigned int isenable_oc = 1;
 
 extern ssize_t get_gpu_vdd_levels_str(char *buf);
 extern void set_gpu_vdd_levels(int uv_tbl[]);
@@ -778,13 +778,13 @@ static ssize_t store_enable_oc(struct cpufreq_policy *policy, const char *buf, s
 	unsigned int value = 0;
 	ret = sscanf(buf, "%u", &value);
 	
-	isenable_oc = value;
+	isenable_oc = 1;
 	return count;
 }
 
 static ssize_t show_enable_oc(struct cpufreq_policy *policy, char *buf)
 {
-	return sprintf(buf, "%u\n", isenable_oc);
+	return sprintf(buf, "%u\n", 1);
 }
 
 static ssize_t show_freq_lock(struct cpufreq_policy *policy, char *buf)
