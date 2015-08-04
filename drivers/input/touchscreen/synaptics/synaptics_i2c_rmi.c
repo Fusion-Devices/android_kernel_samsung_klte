@@ -224,7 +224,8 @@ static struct device_attribute attrs[] = {
 
 
 //KT specifics
-extern void hotplugap_boostpulse(void);
+//extern hotplugap_boostpulse(void);
+
 #include <linux/wakelock.h>
 #include <linux/kt_wake_funcs.h>
 #include <linux/pm.h>
@@ -1862,7 +1863,7 @@ static int synaptics_rmi4_f12_abs_report(struct synaptics_rmi4_data *rmi4_data,
 		//pr_alert("KT TOUCH-%d - %d\n", touch_count, screen_is_off);
 		if (fusiondemand_is_active)
 			fusiondemand_boostpulse(false);
-		hotplugap_boostpulse();
+		//hotplugap_boostpulse();
 	}
 	
 	return touch_count;
