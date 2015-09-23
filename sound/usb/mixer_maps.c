@@ -315,6 +315,12 @@ static struct usbmix_ctl_map usbmix_ctl_maps[] = {
 		.ignore_ctl_error = 1,
 	},
 	{
+		/* MAYA44 USB+ */
+		.id = USB_ID(0x2573, 0x0008),
+		.map = maya44_map,
+	},
+	{
+		/* KEF X300A */
 		.id = USB_ID(0x041e, 0x3010),
 		.map = mp3plus_map,
 	},
